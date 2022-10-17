@@ -34,8 +34,9 @@ export default {
 
 
 
-### Inside the <template> section create <p> tags use v-if and v-else directives to output the data on the screen.
-### v-on button listens to the DOM events and allows to manipulate the data.
+### Inside the template section create p tags use v-if and v-else directives to output the data on the screen.
+### v-on button listens to the DOM events and allows to manipulate the data, with a method that we can call from a methods secion inside the script tag.
+### Create the equvalent code for dislike option.
 ```
 <section>
     <!-- Section with paragraphs and button to show an like data output on the page using v-if and v-else -->
@@ -51,6 +52,71 @@ export default {
       Like
     </button>
   </section>
+```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### methods is a section that we can call from the HTML section, and it triggers the changes in the data depends on the action on the screen.
+### presentation() method for likes and no() method for dislikes data, the both are set up to increment by 1.
+```
+// 
+  methods: {
+    presentation () {
+      this.likes++
+    // presentation method to increment likes by one
+    },
+    no () {
+      this.dislikes++
+      // no method to increment dislikes by one
+    }
+```
+### Additional styling using scss, mainly for button and position of out data on the screen
+```
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: blue;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
+
+@media all and (max-width:30em) {
+  button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+</style>
