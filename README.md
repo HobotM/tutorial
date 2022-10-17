@@ -55,7 +55,7 @@ export default {
 ```
 
 ### methods is a section that we can call from the HTML section, and it triggers the changes in the data depends on the action on the screen.
-### presentation() method for likes and no() method for dislikes data, the both are set up to increment by 1.
+### presentation() method for likes and no() method for dislikes data, both are set up to increment by 1.
 ```
 // 
   methods: {
