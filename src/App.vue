@@ -1,19 +1,21 @@
 
 <template>
   <section>
+    <!-- Section with paragraphs and button to show an like data output on the page using v-if and v-else -->
     <p v-if="likes > 0">
       this presentation has {{ likes }} &#128077;
     </p>
 
     <p v-else>
       Who likes it?
-
     </p>
+<!-- v-on click triggeres an event handler that changes the data which is displayed on the screen -->
     <button v-on:click="presentation()">
       Like
     </button>
   </section>
 
+  <!-- Section with paragraphs and button to show an dislike data output on the page using v-if and v-else -->
   <section>
     <p v-if="dislikes > 0">
       this presentation has {{ dislikes }} &#128078;
@@ -22,7 +24,7 @@
     <p v-else>
      Who dislikes it?
     </p>
-
+<!-- v-on click triggeres an event handler that changes the data which is displayed on the screen -->
     <button v-on:click="no()">
       Dislike
     </button>
@@ -33,19 +35,22 @@
 <script>
 import Vue from 'vue'
 export default {
-
+// JavaScript expression with props likes and dislikes with values set to 0 to began with
   data () {
     return {
       likes: 0,
       dislikes: 0
     }
   },
+  // methods is a section that we can call from the HTML section, and it triggers the changes in the data depends on the action on the screen.
   methods: {
     presentation () {
       this.likes++
+    // presentation method to increment likes by one
     },
     no () {
       this.dislikes++
+      // no method to increment dislikes by one
     }
   }
 
