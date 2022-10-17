@@ -2,15 +2,29 @@
 <template>
   <section>
     <p v-if="likes > 0">
-      this presentation has {{ likes }} likes
+      this presentation has {{ likes }} &#128077;
     </p>
 
     <p v-else>
-      nobody likes it
+      Who likes it?
 
     </p>
     <button v-on:click="presentation()">
       Like
+    </button>
+  </section>
+
+  <section>
+    <p v-if="dislikes > 0">
+      this presentation has {{ dislikes }} &#128078;
+    </p>
+
+    <p v-else>
+     Who dislikes it?
+    </p>
+
+    <button v-on:click="no()">
+      Dislike
     </button>
   </section>
 
@@ -22,12 +36,16 @@ export default {
 
   data () {
     return {
-      likes: 0
+      likes: 0,
+      dislikes: 0
     }
   },
   methods: {
     presentation () {
       this.likes++
+    },
+    no () {
+      this.dislikes++
     }
   }
 
