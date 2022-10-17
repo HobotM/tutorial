@@ -20,7 +20,7 @@ npm run serve
 
 ### Import Vue from vue
 ### export default is used to create local registration for Vue component
-### data is a function that returns the initial reactive state for the component instance. The function is expected to return a plain JavaScript object, which will be ### made reactive by Vue. It will be created 
+### data is a function that returns the initial reactive state for the component instance. The function is expected to return a plain JavaScript object, which will be  made reactive by Vue. It will be created 
 ```
 import Vue from 'vue'
 export default {
@@ -34,7 +34,8 @@ export default {
 
 
 
-### html
+### Inside the <template> section create <p> tags use v-if and v-else directives to output the data on the screen.
+### v-on button listens to the DOM events and allows to manipulate the data.
 ```
 <section>
     <!-- Section with paragraphs and button to show an like data output on the page using v-if and v-else -->
